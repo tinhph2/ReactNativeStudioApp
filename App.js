@@ -9,6 +9,7 @@ import Profile from './src/screens/app/Profile';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Image} from 'react-native';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -42,8 +43,10 @@ const Tabs = () => (
     <Tab.Screen name="Profile" component={Profile} />
   </Tab.Navigator>
 );
+
 const App = () => {
-  const isSignedIn = true;
+  const isSignedIn = false;
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

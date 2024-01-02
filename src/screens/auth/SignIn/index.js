@@ -7,20 +7,29 @@ import Button from '../../../components/Button';
 import Seperator from '../../../components/Seperator';
 import GoogleLogin from '../../../components/GoogleLogin';
 
-const SignIn = () => {
-  const onSignIn = () => {
-    console.log('Test Sign in');
+const SignIn = ({navigation}) => {
+  const onSignUp = () => {
+    navigation.navigate('SignUp');
   };
+
+  const onBack = () => {
+    navigation.goBack();
+  };
+  
   return (
     <View style={styles.container}>
-      <AuthHeader title="Sign In" />
+      <AuthHeader onBackPress={onBack} title="Sign In" />
       <Input label="Email" placeholder="example@gmail.com" />
       <Input isPassword label="Password" placeholder="******" />
       <Button style={styles.button} title="Sign In"></Button>
       <Seperator text="Or sign up with"></Seperator>
       <GoogleLogin></GoogleLogin>
       <Text style={styles.footerText}>
-        Don’t have an account? Sign Up
+        Don't have an account?
+        <Text onPress={onSignUp} style={styles.footerLink}>
+          {' '}
+          Sign Up
+        </Text>
       </Text>
     </View>
   );

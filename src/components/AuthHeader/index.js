@@ -5,7 +5,7 @@ import {styles} from './styles';
 const AuthHeader = ({title, onBackPress}) => {
   return (
     <View style={styles.container}>
-      <Pressable onBackPress={onBackPress}>
+      <Pressable onPress={onBackPress}>
         <Image
           style={styles.iconBack}
           source={require('../../assets/auth_back.png')}></Image>
