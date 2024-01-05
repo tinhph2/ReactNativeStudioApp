@@ -45,7 +45,7 @@ const Tabs = () => (
 );
 
 const App = () => {
-  const isSignedIn = false;
+  const isSignedIn = true;
 
   return (
     <NavigationContainer>

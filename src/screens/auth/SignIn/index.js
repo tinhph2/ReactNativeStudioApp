@@ -6,6 +6,7 @@ import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import Seperator from '../../../components/Seperator';
 import GoogleLogin from '../../../components/GoogleLogin';
+import Home from '../../app/Home';
 
 const SignIn = ({navigation}) => {
   const onSignUp = () => {
@@ -15,13 +16,17 @@ const SignIn = ({navigation}) => {
   const onBack = () => {
     navigation.goBack();
   };
-  
+
+  const onHome = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.container}>
       <AuthHeader onBackPress={onBack} title="Sign In" />
       <Input label="Email" placeholder="example@gmail.com" />
       <Input isPassword label="Password" placeholder="******" />
-      <Button style={styles.button} title="Sign In"></Button>
+      <Button onPress={onHome} style={styles.button} title="Sign In"></Button>
       <Seperator text="Or sign up with"></Seperator>
       <GoogleLogin></GoogleLogin>
       <Text style={styles.footerText}>
