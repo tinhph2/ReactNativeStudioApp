@@ -4,10 +4,11 @@ import {styles} from './styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Header from '../../../components/Header';
 import {categories} from '../../../components/data/categories';
+import CategoryBox from '../../../components/CategoryBox';
 const Home = () => {
   const [keyword, setKeyword] = useState(false);
   const renderCategoryItem = ({item}) => {
-    return <Text>{item?.title}</Text>;
+    <CategoryBox title={item?.title} image={item?.image} />;
   };
   return (
     <SafeAreaView>

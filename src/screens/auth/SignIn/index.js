@@ -1,34 +1,30 @@
 import React, {useState} from 'react';
-import {Text, Image, View, Pressable} from 'react-native';
-import {styles} from './styles';
+import {ScrollView, Text} from 'react-native';
 import AuthHeader from '../../../components/AuthHeader';
-import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+import Input from '../../../components/Input';
 import Seperator from '../../../components/Seperator';
 import GoogleLogin from '../../../components/GoogleLogin';
-import Home from '../../app/Home';
+import {styles} from './styles';
 
-const SignIn = ({navigation}) => {
+const Signin = () => {
   const onSignUp = () => {
-    navigation.navigate('SignUp');
-  };
-
-  const onBack = () => {
-    navigation.goBack();
-  };
-
-  const onHome = () => {
-    navigation.navigate('Home');
+    console.log('HOLA');
   };
 
   return (
-    <View style={styles.container}>
-      <AuthHeader onBackPress={onBack} title="Sign In" />
-      <Input label="Email" placeholder="example@gmail.com" />
-      <Input isPassword label="Password" placeholder="******" />
-      <Button onPress={onHome} style={styles.button} title="Sign In"></Button>
-      <Seperator text="Or sign up with"></Seperator>
-      <GoogleLogin></GoogleLogin>
+    <ScrollView style={styles.container}>
+      <AuthHeader title="Sign In" />
+
+      <Input label="E-mail" placeholder="example@gmail.com" />
+      <Input isPassword label="Password" placeholder="*******" />
+
+      <Button style={styles.button} title="Sign In" />
+
+      <Seperator text="Or sign in with" />
+
+      <GoogleLogin />
+
       <Text style={styles.footerText}>
         Don't have an account?
         <Text onPress={onSignUp} style={styles.footerLink}>
@@ -36,8 +32,8 @@ const SignIn = ({navigation}) => {
           Sign Up
         </Text>
       </Text>
-    </View>
+    </ScrollView>
   );
 };
 
-export default SignIn;
+export default React.memo(Signin);
