@@ -7,11 +7,13 @@ import Seperator from '../../../components/Seperator';
 import GoogleLogin from '../../../components/GoogleLogin';
 import {styles} from './styles';
 
-const Signin = () => {
+const SignIn = ({navigation}) => {
   const onSignUp = () => {
-    console.log('HOLA');
+    navigation.navigate('SignUp');
   };
-
+  const onBack = () => {
+    navigation.goBack();
+  };
   return (
     <ScrollView style={styles.container}>
       <AuthHeader title="Sign In" />
@@ -36,4 +38,4 @@ const Signin = () => {
   );
 };
 
-export default React.memo(Signin);
+export default React.memo(SignIn);

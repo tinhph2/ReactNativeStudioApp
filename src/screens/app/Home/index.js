@@ -7,9 +7,10 @@ import {categories} from '../../../components/data/categories';
 import CategoryBox from '../../../components/CategoryBox';
 const Home = () => {
   const [keyword, setKeyword] = useState(false);
-  const renderCategoryItem = ({item}) => {
-    <CategoryBox title={item?.title} image={item?.image} />;
+  const renderCategoryItem = ({item, index}) => {
+    return <CategoryBox title={item?.title} image={item?.image}></CategoryBox>;
   };
+
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
