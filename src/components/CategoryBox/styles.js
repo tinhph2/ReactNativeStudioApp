@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    height: 150,
   },
   title: {
     color: '#8D9BB5',

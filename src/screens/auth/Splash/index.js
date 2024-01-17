@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image, View, Pressable} from 'react-native';
+import { Image, View, Pressable, Text} from 'react-native';
 import {styles} from './styles';
 import Button from '../../../components/Button';
 const Splash = ({navigation}) => {

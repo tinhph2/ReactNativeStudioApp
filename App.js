@@ -10,8 +10,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import Config from "react-native-config";
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import Config from 'react-native-config';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const Tabs = () => (
